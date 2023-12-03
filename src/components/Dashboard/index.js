@@ -79,7 +79,7 @@ class Dashboard extends Component {
       this.setState({ apiStatus: apiStatusConstant.inprogress });
       const { selectedMonth, searchText, pageNo } = this.state;
       const response = await fetch(
-        `http://localhost:3001/sales?month=${selectedMonth}&search_q=${searchText}&page=${pageNo}`
+        `https://backendof.onrender.com/sales?month=${selectedMonth}&search_q=${searchText}&page=${pageNo}`
       );
       const data = await response.json();
       this.setState({ transactionsData: data });
@@ -96,7 +96,7 @@ class Dashboard extends Component {
       this.setState({ apiStatusStatistics: apiStatusConstant.inprogress });
       const { selectedMonth } = this.state;
       const response = await fetch(
-        `http://localhost:3001/all-statistics?month=${selectedMonth}`
+        `https://backendof.onrender.com/all-statistics?month=${selectedMonth}`
       );
       const data = await response.json();
       console.log(data);
