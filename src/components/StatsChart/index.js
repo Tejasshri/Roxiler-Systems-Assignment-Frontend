@@ -16,11 +16,12 @@ export function StatsChart({ itemPriceRange, monthName }) {
     name: each,
     items: itemPriceRange[each],
   }));
-  console.log(list);
 
   return (
     <div className="chart-container">
-      <h2>Bar Charts Stats - {monthName}</h2>
+      <h2>
+        <u>Bar Charts Stats</u> - <i style={{ color: "green" }}>{monthName}</i>
+      </h2>
       <ResponsiveContainer width="70%">
         <BarChart
           width="500"

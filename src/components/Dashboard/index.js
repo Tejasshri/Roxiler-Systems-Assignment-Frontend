@@ -8,6 +8,7 @@ import TransactionsStatistics from "../TransactionsStatistics";
 
 import "./index.css";
 import { StatsChart } from "../StatsChart";
+import CategoryChart from "../CategoryChart";
 
 const monthsData = [
   { monthNo: 1, monthName: "January" },
@@ -199,7 +200,8 @@ class Dashboard extends Component {
   };
 
   getStatisticsSuccessView = () => {
-    const { itemPriceRange, statistics, selectedMonth } = this.state;
+    const { itemPriceRange, statistics, selectedMonth, categories } =
+      this.state;
     console.log(selectedMonth);
     const name = monthsData.find(
       (each) => String(each.monthNo) === String(selectedMonth)
@@ -213,7 +215,8 @@ class Dashboard extends Component {
           monthName={name}
           statistics={statistics}
         />
-        {<StatsChart monthName={name} itemPriceRange={itemPriceRange} />}
+        <StatsChart monthName={name} itemPriceRange={itemPriceRange} />
+        <CategoryChart monthName={name} categories={categories} />
       </div>
     );
   };

@@ -3,7 +3,9 @@ import "./index.css";
 export default function TransactionsStatistics({ statistics, monthName }) {
   return (
     <section className="transactions-statistics">
-      <h2 className="statistics-title">Statistics - {monthName}</h2>
+      <h2 className="statistics-title">
+        <u>Statistics</u> - <i style={{color: 'green'}}>{monthName}</i>
+      </h2>
       <div className="statistics-container">
         <div className="statistics-item">
           <p>Total Sale</p>
